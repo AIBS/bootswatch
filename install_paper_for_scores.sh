@@ -21,7 +21,7 @@ timestamp() {
 
 # Update this array to control which applications are updated
 # apps_to_update=("scores_contracts" "scores_projects" "scores_reviews") # All applications
-apps_to_update=("scores_reviews") # One application
+apps_to_update=("scores_reviews" "scores_contracts") # N applications
 
 for app in "${apps_to_update[@]}"; do
   mv "../$app/app/assets/stylesheets/bootstrap.css.scss" "../$app/app/assets/stylesheets/bootstrap.css.scss-$(timestamp)"

@@ -138,6 +138,10 @@ a {
   text-decoration: underline // Revert Bootstrap 3 default
 }
 
+.nav > li > a:hover, .nav > li > a:focus{
+  text-decoration: underline
+}
+
 // Tables =====================================================================
 
 .table-hover {
@@ -635,4 +639,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 textarea{
   background: repeating-linear-gradient(to bottom, transparent, transparent 28.536px, #BEBEBE 29.536px) !important; // Ala https://stackoverflow.com/a/42531266
   background-attachment: local;
+}
+
+.navbar-text{
+  color: @brand-info !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-text{
+    padding-left: 15px;
+  }
 }
