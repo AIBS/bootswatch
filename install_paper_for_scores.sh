@@ -20,7 +20,8 @@ timestamp() {
 }
 
 # Update this array to control which applications are updated
-apps_to_update=("scores_contracts") # "scores_projects" "scores_reviews")
+# apps_to_update=("scores_contracts" "scores_projects" "scores_reviews") # All applications
+apps_to_update=("scores_reviews") # One application
 
 for app in "${apps_to_update[@]}"; do
   mv "../$app/app/assets/stylesheets/bootstrap.css.scss" "../$app/app/assets/stylesheets/bootstrap.css.scss-$(timestamp)"
