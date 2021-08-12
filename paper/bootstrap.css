@@ -1207,7 +1207,7 @@ h6 .small,
 .h6 .small {
   font-weight: 400;
   line-height: 1;
-  color: #bbbbbb;
+  color: #666666;
 }
 h1,
 .h1,
@@ -1483,7 +1483,7 @@ blockquote .small {
   display: block;
   font-size: 80%;
   line-height: 1.846;
-  color: #bbbbbb;
+  color: #666666;
 }
 blockquote footer:before,
 blockquote small:before,
@@ -6801,6 +6801,7 @@ button.close {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .btn {
+  text-decoration: none;
   text-transform: uppercase;
   border: none;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
