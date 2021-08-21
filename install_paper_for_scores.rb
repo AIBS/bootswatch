@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env ruby
 
 # Use this script to move the compiled bootstrap.css file into the SCORES applications, excluding Solicitations.
 #
@@ -15,16 +15,22 @@
 # IMPORTANT
 # To compare changes made here for future upgrades, diff the variables.less and bootswatch.less files here with originals from https://bootswatch.com/3/
 
-timestamp() {
-  date +"%y%m%d-%H%M%S";
-}
+require 'fileutils'
 
-# Update this array to control which applications are updated
-apps_to_update=("scores_contracts" "scores_projects" "scores_reviews") # All applications
-# apps_to_update=("scores_projects") # N applications
+def timestamp
+  Time.now.strftime('%y%m%d-%H%M%S')
+end
 
-for app in "${apps_to_update[@]}"; do
-  mv "../$app/app/assets/stylesheets/bootstrap.css.scss" "../$app/app/assets/stylesheets/bootstrap.css.scss-$(timestamp)"
-  cp "./paper/bootstrap.css" "../$app/app/assets/stylesheets/bootstrap.css.scss"
-  echo "$app bootstrap.css.scss backed up, current build installed";
-done
+source = "./paper/bootstrap.css"
+destinations = [
+  # '../scores_projects/app/assets/stylesheets/bootstrap.css.scss',
+  # '../scores_reviews/app/assets/stylesheets/bootstrap.css.scss',
+  # '../scores_contracts/app/assets/stylesheets/bootstrap.css.scss',
+  '../scores_a11y_documents/a11y_assets/bootstrap.css'
+]
+
+destinations.each do |f|
+  FileUtils.mv f, "#{f}-#{timestamp}"
+  FileUtils.cp source, f
+  puts "\"#{f}\" was archived & current paper boostrap installed"
+end
