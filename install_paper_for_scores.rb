@@ -23,10 +23,10 @@ end
 
 source = "./paper/bootstrap.css"
 destinations = [
-  # '../scores_projects/app/assets/stylesheets/bootstrap.css.scss',
-  # '../scores_reviews/app/assets/stylesheets/bootstrap.css.scss',
-  # '../scores_contracts/app/assets/stylesheets/bootstrap.css.scss',
-  '../scores_a11y_documents/a11y_assets/bootstrap.css'
+  '../scores_projects/app/assets/stylesheets/bootstrap.css.scss',
+  '../scores_reviews/app/assets/stylesheets/bootstrap.css.scss',
+  '../scores_contracts/app/assets/stylesheets/bootstrap.css.scss',
+  '../scores_a11y_documents/a11y_assets/bootstrap_3.css'
 ]
 
 destinations.each do |f|
